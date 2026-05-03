@@ -1,0 +1,161 @@
+/* /* Reset */
+* {
+  box-sizing: border-box;
+}
+
+/* Body */
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* FIX: no cutting */
+  padding: 20px;
+  background: linear-gradient(135deg, #2a7b9b, #57c785, #eddd53);
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/* App wrapper */
+.app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+/* Heading */
+.title {
+  color: white;
+  margin-bottom: 15px;
+  font-size: 22px;
+  text-align: center;
+}
+
+/* Calculator (Glass) */
+.calculator {
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px);
+  padding: 20px;
+  border-radius: 25px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+  width: 300px;
+  color: white;
+}
+
+/* Display */
+#display {
+  width: 100%;
+  padding: 18px;
+  font-size: 32px;
+  border: none;
+  border-radius: 15px;
+  margin-bottom: 20px;
+  text-align: right;
+  background: rgba(255,255,255,0.15);
+  color: white;
+  outline: none;
+
+  /* overflow fix */
+  white-space: nowrap;
+  overflow-x: auto;
+}
+
+/* Buttons grid */
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+/* Base button */
+button {
+  padding: 18px;
+  font-size: 18px;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  background: rgba(255,255,255,0.15);
+  color: white;
+  transition: all 0.2s ease;
+  backdrop-filter: blur(5px);
+}
+
+/* Hover */
+button:hover {
+  transform: scale(1.08);
+  background: rgba(255,255,255,0.25);
+}
+
+/* Click */
+button:active {
+  transform: scale(0.95);
+}
+
+/* Operator */
+.operator {
+  background: linear-gradient(145deg, #ff9800, #ffb74d);
+}
+
+.operator:hover {
+  background: linear-gradient(145deg, #ffb74d, #ffc107);
+}
+
+/* Equal */
+.equal {
+  background: linear-gradient(145deg, #4caf50, #66bb6a);
+}
+
+.equal:hover {
+  background: linear-gradient(145deg, #66bb6a, #81c784);
+}
+
+/* Clear (full width pill) */
+.clear {
+  grid-column: span 4;
+  border-radius: 40px;
+  background: linear-gradient(145deg, #f44336, #e57373);
+}
+
+.clear:hover {
+  background: linear-gradient(145deg, #e57373, #ef9a9a);
+}
+
+/* History */
+.history {
+  margin-top: 15px;
+  max-height: 120px;
+  overflow-y: auto;
+  font-size: 13px;
+  opacity: 0.85;
+}
+
+/* Scrollbar (optional nice look) */
+.history::-webkit-scrollbar {
+  width: 5px;
+}
+.history::-webkit-scrollbar-thumb {
+  background: rgba(255,255,255,0.3);
+  border-radius: 10px;
+}
+
+/* 📱 Mobile Responsive */
+@media (max-width: 500px) {
+  .calculator {
+    width: 100%;
+    max-width: 320px;
+  }
+
+  .title {
+    font-size: 18px;
+  }
+
+  button {
+    padding: 16px;
+    font-size: 16px;
+  }
+
+  #display {
+    font-size: 26px;
+  }
+} 
