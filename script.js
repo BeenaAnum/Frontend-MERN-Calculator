@@ -13,7 +13,7 @@ async function calculate(){
 
 const expression = display.value;
 
-const response = await fetch("http://localhost:5000/calculate",{
+const response = await fetch("https://backend-mern-calculator.vercel.app/calculate",{
 method:"POST",
 headers:{
 "Content-Type":"application/json"
@@ -30,7 +30,7 @@ loadHistory();
 
 async function loadHistory(){
 
-const response = await fetch("http://localhost:5000/history");
+const response = await fetch("https://backend-mern-calculator.vercel.app/history");
 const data = await response.json();
 
 historyList.innerHTML="";
